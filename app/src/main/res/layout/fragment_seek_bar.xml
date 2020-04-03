@@ -6,17 +6,16 @@
     android:orientation="vertical"
     tools:context=".SeekBar">
 
-    <TextView
-        android:id="@+id/playerNumber"
+    <EditText
+        android:id="@+id/enterNumber"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:text="hello_blank_fragment"
-        android:gravity="center_horizontal" />
+        android:layout_height="wrap_content"
+        android:hint="Enter a number from 0 to 100"/>
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/buttonNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"/>
 
 </LinearLayout>

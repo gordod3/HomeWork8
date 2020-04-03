@@ -9,13 +9,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SeekBar extends Fragment {
-    SeekBar seekBar;
+    Button button;
+    EditText editText;
 
     public SeekBar() {
         // Required empty public constructor
@@ -32,6 +35,16 @@ public class SeekBar extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        seekBar = (SeekBar) view.findViewById(R.id.seekBar);
+        button = view.findViewById(R.id.buttonNumber);
+        editText = view.findViewById(R.id.enterNumber);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                try {
+                    mainActivity.choiceNumber(Integer.valueOf(editText.getText().toString()));
+                }catch (Exception e){}
+            }
+        });
     }
 }
