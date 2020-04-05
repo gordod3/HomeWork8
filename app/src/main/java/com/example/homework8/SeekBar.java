@@ -42,7 +42,9 @@ public class SeekBar extends Fragment {
             public void onClick(View v) {
                 MainActivity mainActivity = (MainActivity) getActivity();
                 try {
-                    mainActivity.choiceNumber(Integer.valueOf(editText.getText().toString()));
+                    if (Integer.valueOf(editText.getText().toString()) >= 0 && Integer.valueOf(editText.getText().toString()) <= 100) {
+                        mainActivity.choiceNumber(Integer.valueOf(editText.getText().toString()));
+                    }
                 }catch (Exception e){}
             }
         });
